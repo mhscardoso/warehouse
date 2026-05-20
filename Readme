@@ -1,0 +1,20 @@
+Tem que dar o gitclone dos outros projetos na pasta 01_fontes:
+
+git clone https://github.com/mhscardoso/bigdata
+git clone https://github.com/valviessejoao/mae016-bdd-dwh-projeto1
+git clone https://github.com/gupessanha/locadora-dw-parte1
+git clone https://github.com/tadeupires21-sketch/locadora-db
+
+## Ordem de execução
+
+1. 02_dw_schema/create_dw_v2.sql
+2. 03_etl/01_extracao/extract_grupo_*.sql  (qualquer ordem)
+3. 03_etl/02_transformacao/transform_staging.sql
+4. 03_etl/03_carga/load_dimensoes.sql
+5. 03_etl/03_carga/load_fatos.sql
+6. 04_relatorios/*.sql
+
+## Limitações conhecidas
+- sk_grupo em fato_reserva é NULL — extract não preservou id_grupo na staging de reserva
+- dt_devolucao_prevista NULL em mhscardoso e valviesse usa sentinela 99991231
+- ~5% das locações descartadas por valor_diaria irresolvível

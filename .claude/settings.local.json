@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Área de Trabalho\\\\Projetos\\\\TrabalhoBigDataPT2\\\\02_dw_schema\")",
+      "Bash(Out-Null)",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Área de Trabalho\\\\Projetos\\\\TrabalhoBigDataPT2\\\\03_etl\\\\01_extracao\")",
+      "Bash(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\Área de Trabalho\\\\Projetos\\\\TrabalhoBigDataPT2\\\\04_relatorios\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\�rea de Trabalho\\\\Projetos\\\\TrabalhoBigDataPT2\\\\03_etl\\\\02_transformacao\")",
+      "PowerShell(New-Item -ItemType Directory -Force \"c:\\\\Users\\\\lucas\\\\OneDrive\\\\�rea de Trabalho\\\\Projetos\\\\TrabalhoBigDataPT2\\\\03_etl\\\\03_carga\")"
+    ]
+  }
+}
