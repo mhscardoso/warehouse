@@ -24,7 +24,7 @@
 --
 -- Constraints de unicidade para dim_grupo, dim_patio e dim_cliente não
 -- existem em create_dw_v2.sql — são adicionadas aqui idempotentemente
--- via blocos DO/EXCEPTION para que o ON CONFLICT funcione.
+-- via blocos DO com IF NOT EXISTS em pg_constraint para que o ON CONFLICT funcione.
 -- =============================================================================
 
 -- =============================================================================
@@ -36,28 +36,37 @@ CREATE SCHEMA IF NOT EXISTS dw;
 -- =============================================================================
 -- 0.1 Unique constraints para chaves naturais das dimensões
 -- =============================================================================
--- Necessárias para que ON CONFLICT (colunas) funcione. Blocos DO/EXCEPTION
--- garantem idempotência (constraint já existente não gera erro).
+-- Necessárias para que ON CONFLICT (colunas) funcione. Blocos DO com IF NOT EXISTS
+-- em pg_constraint garantem idempotência sem depender de EXCEPTION WHEN.
 
 DO $$
 BEGIN
-    ALTER TABLE dw.dim_grupo
-        ADD CONSTRAINT uq_dim_grupo_natural UNIQUE (id_sistema_origem, nome_grupo);
-EXCEPTION WHEN duplicate_object THEN NULL;
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'uq_dim_grupo_natural'
+    ) THEN
+        ALTER TABLE dw.dim_grupo
+            ADD CONSTRAINT uq_dim_grupo_natural UNIQUE (id_sistema_origem, nome_grupo);
+    END IF;
 END $$;
 
 DO $$
 BEGIN
-    ALTER TABLE dw.dim_patio
-        ADD CONSTRAINT uq_dim_patio_natural UNIQUE (id_sistema_origem, id_patio_origem);
-EXCEPTION WHEN duplicate_object THEN NULL;
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'uq_dim_patio_natural'
+    ) THEN
+        ALTER TABLE dw.dim_patio
+            ADD CONSTRAINT uq_dim_patio_natural UNIQUE (id_sistema_origem, id_patio_origem);
+    END IF;
 END $$;
 
 DO $$
 BEGIN
-    ALTER TABLE dw.dim_cliente
-        ADD CONSTRAINT uq_dim_cliente_natural UNIQUE (id_sistema_origem, id_cliente_origem);
-EXCEPTION WHEN duplicate_object THEN NULL;
+    IF NOT EXISTS (
+        SELECT 1 FROM pg_constraint WHERE conname = 'uq_dim_cliente_natural'
+    ) THEN
+        ALTER TABLE dw.dim_cliente
+            ADD CONSTRAINT uq_dim_cliente_natural UNIQUE (id_sistema_origem, id_cliente_origem);
+    END IF;
 END $$;
 
 -- dim_veiculo: UNIQUE(placa) já definido em create_dw_v2.sql (alteração v2).
