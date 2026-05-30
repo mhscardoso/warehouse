@@ -15,12 +15,26 @@ Matheus Henrique Sant’ Anna Cardoso     - DRE: 121073530
 Patrick Mucio Rodrigues Pereira         - DRE: 120055979
 ```
 
+## Link para o PDF com o relatório do que foi feito
+
+https://docs.google.com/document/d/1kl8n7E8uOt-68rjTjrOL9Yz9G_ie7nokEPJ7WDQLPUM/edit?tab=t.0
+
+## Fontes dos outros grupos e nosso
+
 É preciso realizar o git clone dos outros projetos na pasta 01_fontes:
 
+1. Crie uma pasta ```01_fontes``` na raiz do projeto.
+2. Execute os códigos abaixo para entrar na pasta e clonar os repositórios:
+
+Repare que o primeiro ```https://github.com/mhscardoso/bigdata``` é o nosso grupo.
+
+```sh
+cd 01_fontes
 git clone https://github.com/mhscardoso/bigdata
 git clone https://github.com/valviessejoao/mae016-bdd-dwh-projeto1
 git clone https://github.com/gupessanha/locadora-dw-parte1
 git clone https://github.com/tadeupires21-sketch/locadora-db
+```
 
 ## Ordem de execução
 
