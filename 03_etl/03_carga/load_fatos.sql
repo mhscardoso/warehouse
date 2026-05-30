@@ -1,4 +1,15 @@
 -- =============================================================================
+-- Trabalho desenvolvido pelos alunos da UFRJ.
+-- Período: 2026.1
+-- Cadeira: BigData
+-- Integrantes:                                    
+-- 
+--           Lucas Garcia Santiago de Abreu          - DRE: 121039536
+--           Matheus Henrique Sant’ Anna Cardoso     - DRE: 121073530
+--           Patrick Mucio Rodrigues Pereira         - DRE: 120055979
+-- =============================================================================
+
+-- =============================================================================
 -- Arquivo  : 03_etl/03_carga/load_fatos.sql
 -- Projeto  : Locadora de Veículos — Data Warehouse (Parte II)
 -- Descrição: Carrega as tabelas fato_* do schema dw a partir das std_*

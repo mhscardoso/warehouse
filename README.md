@@ -1,4 +1,21 @@
-Tem que dar o gitclone dos outros projetos na pasta 01_fontes:
+# BigData | Criação do Data Warehouse
+
+
+Trabalho desenvolvido pelos alunos da UFRJ.
+
+Período: 2026.1
+
+Cadeira: BigData
+
+Integrantes:                                    
+
+```
+Lucas Garcia Santiago de Abreu          - DRE: 121039536
+Matheus Henrique Sant’ Anna Cardoso     - DRE: 121073530
+Patrick Mucio Rodrigues Pereira         - DRE: 120055979
+```
+
+É preciso realizar o git clone dos outros projetos na pasta 01_fontes:
 
 git clone https://github.com/mhscardoso/bigdata
 git clone https://github.com/valviessejoao/mae016-bdd-dwh-projeto1
