@@ -15,6 +15,15 @@ Matheus Henrique Sant’ Anna Cardoso     - DRE: 121073530
 Patrick Mucio Rodrigues Pereira         - DRE: 120055979
 ```
 
+## Schemas utilizados
+
+Os schemas das fontes utilizadas, que foram criados por nós e outros grupos
+estão na pasta ```fontes``` com o dono do repositório, assim:
+
+```schema_<repositorio>.sql```
+
+Cada schema possui um cabeçalho om quem o criou.
+
 ## Link para o PDF com o relatório do que foi feito
 
 https://docs.google.com/document/d/1kl8n7E8uOt-68rjTjrOL9Yz9G_ie7nokEPJ7WDQLPUM/edit?tab=t.0
